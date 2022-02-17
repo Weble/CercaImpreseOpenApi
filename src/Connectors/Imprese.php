@@ -24,8 +24,7 @@ class Imprese extends SaloonConnector
     protected bool $test;
 
     public function __construct(
-    )
-    {
+    ) {
         $this->token = config('cercaimprese.token', '');
         $this->test = config('cercaimprese.test', true);
     }
@@ -33,7 +32,7 @@ class Imprese extends SaloonConnector
     public function defaultHeaders(): array
     {
         return [
-            'Authorization' => 'Bearer ' . $this->token
+            'Authorization' => 'Bearer ' . $this->token,
         ];
     }
 
@@ -45,5 +44,4 @@ class Imprese extends SaloonConnector
 
         return self::URL;
     }
-
 }

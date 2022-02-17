@@ -19,7 +19,6 @@ class ImpreseBaseRequest extends SaloonRequest
 
     public function __construct(
         public string $search
-    )
-    {
+    ) {
     }
 }

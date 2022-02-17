@@ -20,15 +20,15 @@ class ImpreseAdvancedRequest extends SaloonRequest
     public function defaultQuery(): array
     {
         return array_filter([
-            'denominazione'  => $this->denominazione,
-            'provincia'      => $this->provincia,
-            'codice_ateco'   => $this->codice_ateco,
-            'fatturato_min'  => $this->fatturato_min,
-            'fatturato_max'  => $this->fatturato_max,
+            'denominazione' => $this->denominazione,
+            'provincia' => $this->provincia,
+            'codice_ateco' => $this->codice_ateco,
+            'fatturato_min' => $this->fatturato_min,
+            'fatturato_max' => $this->fatturato_max,
             'dipendenti_min' => $this->dipendenti_min,
             'dipendenti_max' => $this->dipendenti_max,
-            'limite'         => $this->limite,
-            'dry_run'        => $this->dry_run ? 1 : 0
+            'limite' => $this->limite,
+            'dry_run' => $this->dry_run ? 1 : 0,
         ]);
     }
 
@@ -42,7 +42,6 @@ class ImpreseAdvancedRequest extends SaloonRequest
         public ?int    $dipendenti_max = null,
         public ?int    $limite = 1,
         public ?bool   $dry_run = false,
-    )
-    {
+    ) {
     }
 }

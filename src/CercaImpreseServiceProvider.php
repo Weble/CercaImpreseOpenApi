@@ -4,8 +4,6 @@ namespace Weble\CercaImprese;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Weble\CercaImprese\Commands\CercaImpreseCommand;
-use Weble\CercaImprese\Connectors\Imprese;
 
 class CercaImpreseServiceProvider extends PackageServiceProvider
 {
