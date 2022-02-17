@@ -1,24 +1,25 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "weble/cercaimprese",
+    "description": "Laravel Package for OpenAPI.it Cerca Imprese Integration",
     "keywords": [
-        ":vendor_name",
+        "weble",
         "laravel",
-        ":package_slug"
+        "cercaimprese"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/weble/cercaimprese",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Daniele Rosario",
+            "email": "daniele@weble.it",
             "role": "Developer"
         }
     ],
     "require": {
         "php": "^8.0",
-        "spatie/laravel-package-tools": "^1.9.2",
-        "illuminate/contracts": "^9.0"
+        "illuminate/contracts": "^9.0",
+        "sammyjo20/saloon-laravel": "^0.8.0",
+        "spatie/laravel-package-tools": "^1.9.2"
     },
     "require-dev": {
         "nunomaduro/collision": "^6.0",
@@ -34,13 +35,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "Weble\\CercaImprese\\": "src",
+            "Weble\\CercaImprese\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Weble\\CercaImprese\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -54,10 +55,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Weble\\CercaImprese\\CercaImpreseServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "CercaImprese": "Weble\\CercaImprese\\Facades\\CercaImprese"
             }
         }
     },
