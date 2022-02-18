@@ -18,6 +18,7 @@ class CercaImprese
     {
         /** @var Response $response */
         $response = (new ImpreseBaseRequest(search: $search))->send();
+
         return $response->data();
     }
 
@@ -30,7 +31,8 @@ class CercaImprese
         ?int    $dipendenti_min = null,
         ?int    $dipendenti_max = null,
         ?int    $limite = 1,
-        ?bool   $dry_run = false,): Collection
+        ?bool   $dry_run = false,
+    ): Collection
     {
         /** @var Response $response */
         $response = (new ImpreseAdvancedRequest(
