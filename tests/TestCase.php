@@ -28,13 +28,16 @@ class TestCase extends Orchestra
 
     public function getEnvironmentSetUp($app)
     {
-        $env = Dotenv::create(
-            Env::getRepository(),
-            dirname(__DIR__),
-            '.env'
-        )->safeLoad();
+        if (file_exists(dirname(__DIR__) .'/.env')) {
+            $env = Dotenv::create(
+                Env::getRepository(),
+                dirname(__DIR__),
+                '.env'
+            )->safeLoad();
+            $token = $env['CERCAIMPRESE_TOKEN'] ?? '';
+            config()->set('cercaimprese.token', $token);
+        }
 
         config()->set('cercaimprese.test', true);
-        config()->set('cercaimprese.token', $env['CERCAIMPRESE_TOKEN'] ?? '');
     }
 }

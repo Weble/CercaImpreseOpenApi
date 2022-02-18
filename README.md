@@ -5,7 +5,9 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/weble/cercaimprese/Check%20&%20fix%20styling?label=code%20style)](https://github.com/weble/cercaimprese/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/weble/cercaimprese.svg?style=flat-square)](https://packagist.org/packages/weble/cercaimprese)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+With this laravel package you can interact with the [Cerca Imprese OpenAPI](https://openapi.it/business-information/cerca-azienda). 
+
+It's built on top of the amazing [Saloon Package](https://github.com/Sammyjo20/Saloon) and requires PHP8.
 
 ## Installation
 
@@ -13,13 +15,6 @@ You can install the package via composer:
 
 ```bash
 composer require weble/cercaimprese
-```
-
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag="cercaimprese-migrations"
-php artisan migrate
 ```
 
 You can publish the config file with:
@@ -32,23 +27,46 @@ This is the contents of the published config file:
 
 ```php
 return [
+    'token' => env('CERCAIMPRESE_TOKEN', ''),
+    'test' => env('CERCAIMPRESE_TEST', true)
 ];
 ```
 
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="cercaimprese-views"
-```
 
 ## Usage
 
+You can use directly the Facade to interact with the package:
+
+### Base Request
+
+Result is a Laravel Collection of the data of the company requested
+
 ```php
-$cercaImprese = new Weble\CercaImprese();
-echo $cercaImprese->echoPhrase('Hello, Weble!');
+$result = \Weble\CercaImprese\Facades\CercaImprese::base(search: '[PIVA_OR_CF_OR_ID]');
+```
+
+### Advanced Request
+The result is a Laravel Collection of the resulting list of companies.
+
+You can search by anoyone of the parameters, or all of them together in any combination (thanks php8 named parameters!).
+
+```php 
+$result = \Weble\CercaImprese\Facades\CercaImprese::advanced( 
+    denominazione: $denominazione,
+    provincia: $provincia,
+    codice_ateco: $codice_ateco,
+    fatturato_min: $fatturato_min,
+    fatturato_max: $fatturato_max,
+    dipendenti_min: $dipendenti_min,
+    dipendenti_max: $dipendenti_max,
+    limite: $limite,
+    dry_run: $dry_run
+);
 ```
 
 ## Testing
+
+You need either an env variable set for `CERCAIMPRESE_TOKEN` or a `.env` file with the same variable set.
 
 ```bash
 composer test
@@ -57,14 +75,6 @@ composer test
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
-
-## Contributing
-
-Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
-
-## Security Vulnerabilities
-
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
 
 ## Credits
 
