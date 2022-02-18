@@ -11,6 +11,6 @@ class CercaImprese extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'cercaimprese';
+        return \Weble\CercaImprese\CercaImprese::class;
     }
 }

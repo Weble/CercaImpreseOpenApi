@@ -13,4 +13,9 @@ class CercaImpreseServiceProvider extends PackageServiceProvider
             ->name('cercaimprese')
             ->hasConfigFile();
     }
+
+    public function packageRegistered()
+    {
+        $this->app->singleton(CercaImprese::class);
+    }
 }
