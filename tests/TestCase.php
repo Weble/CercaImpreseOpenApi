@@ -39,5 +39,7 @@ class TestCase extends Orchestra
         }
 
         config()->set('cercaimprese.test', true);
+
+        dump(env('CERCAIMPRESE_TOKEN'), config()->get('cercaimprese'));
     }
 }
