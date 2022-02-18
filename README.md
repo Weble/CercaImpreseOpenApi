@@ -1,8 +1,8 @@
 # Laravel Package for OpenAPI.it Cerca Imprese Integration
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/weble/cercaimprese.svg?style=flat-square)](https://packagist.org/packages/weble/cercaimprese)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/weble/cercaimprese/run-tests?label=tests)](https://github.com/weble/cercaimprese/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/weble/cercaimprese/Check%20&%20fix%20styling?label=code%20style)](https://github.com/weble/cercaimprese/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/weble/CercaImpreseOpenApi/run-tests?label=tests)](https://github.com/weble/CercaImpreseOpenApi/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/weble/CercaImpreseOpenApi/Check%20&%20fix%20styling?label=code%20style)](https://github.com/weble/cercaimprese/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/weble/cercaimprese.svg?style=flat-square)](https://packagist.org/packages/weble/cercaimprese)
 
 With this laravel package you can interact with the [Cerca Imprese OpenAPI](https://openapi.it/business-information/cerca-azienda). 
