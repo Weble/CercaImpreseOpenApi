@@ -32,8 +32,7 @@ class CercaImprese
         ?int    $dipendenti_max = null,
         ?int    $limite = 1,
         ?bool   $dry_run = false,
-    ): Collection
-    {
+    ): Collection {
         /** @var Response $response */
         $response = (new ImpreseAdvancedRequest(
             denominazione: $denominazione,
