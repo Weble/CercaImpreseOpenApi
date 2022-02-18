@@ -44,4 +44,6 @@ jobs:
           composer update --${{ matrix.stability }} --prefer-dist --no-interaction
 
       - name: Execute tests
+        env:
+          CERCAIMPRESE_TOKEN: ${{ secrets.CERCAIMPRESE_TOKEN }}
         run: vendor/bin/pest
