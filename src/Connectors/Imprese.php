@@ -3,7 +3,7 @@
 namespace Weble\CercaImprese\Connectors;
 
 use Sammyjo20\Saloon\Http\SaloonConnector;
-use Sammyjo20\Saloon\Traits\Features\AcceptsJson;
+use Sammyjo20\Saloon\Traits\Plugins\AcceptsJson;
 use Weble\CercaImprese\Requests\Imprese\ImpreseBaseRequest;
 use Weble\CercaImprese\Response\Response;
 
